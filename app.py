@@ -11,11 +11,11 @@ def get_info():
     slack_name = request.args.get('slack_name')
     track = request.args.get('track')
 
-     # Get current day of the week
-    current_day = datetime.now(pytz.timezone('Europe/Bucharest')).strftime('%A')
+     # Get current day of the week using UTC+2 timezone
+    current_day = datetime.now(pytz.timezone('Etc/GMT')).strftime('%A')
 
     # Get current UTC time within a +/-2 minute window
-    current_time = datetime.now(pytz.timezone('Europe/Bucharest')).strftime('%Y-%m-%dT%H:%M:%SZ')
+    current_time = datetime.now(pytz.timezone('Etc/GMT')).strftime('%Y-%m-%dT%H:%M:%SZ')
     """
     # Get current day of the week
     current_day = datetime.now(pytz.utc).astimezone(pytz.timezone('UTC+2')).strftime('%A')
